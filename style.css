@@ -1,0 +1,635 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sen', sans-serif;
+  font-size: 15px;
+  background-image: url("images/pha1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  /* perlax scrolling effect for background */
+
+}
+
+canvas {
+  z-index: -1;
+  display: block;
+  vertical-align: bottom;
+  position: absolute;
+  margin-top: -22%;
+  overflow: hidden;
+  /* particle.js canvas used as library https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js */
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(24, 22, 22, 0.836);
+}
+
+::-webkit-scrollbar-track {
+
+  box-shadow: rgba(24, 23, 23, 0.658) 1px 1px 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(50deg,
+      rgba(0, 0, 0, 0.644),
+      rgba(34, 34, 37, 0.856),
+      rgba(27, 27, 31, 0.671),
+
+      rgba(0, 0, 0, 0.658));
+}
+
+/*  load screen   */
+
+.showscreen {
+  transition: 1s all ease-in;
+  display: none;
+}
+
+.loadpage {
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.load {
+  font-size: 60px;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.568);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.767);
+  transition: 1s all ease;
+
+}
+
+.load:hover {
+  box-shadow: 3px 3px 3px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.815);
+}
+
+.btnload {
+  margin-top: 15%;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+
+.meniu {
+  margin-top: -10%;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 5px 20px black;
+  z-index: 1;
+  /* bootstrap menu  */
+}
+
+.nav-link {
+  margin-left: 10px;
+
+}
+
+.home {
+  position: absolute;
+  margin-top: -1000px;
+}
+
+/* welcome section */
+
+.welcome {
+  margin-top: 10%;
+  height: 650px;
+  background-image: url('images/hw1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0 5px 20px black;
+  color: rgb(253, 255, 240);
+  padding: 9rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+
+}
+
+.split ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 6px;
+  height: 430px;
+  float: left;
+  overflow: hidden;
+}
+
+.split li {
+
+  margin-top: 100px;
+}
+
+i {
+  font-size: 30px;
+  /* logo  */
+}
+
+h3 {
+  position: relative;
+  color: white;
+  margin-bottom: 20vh;
+  font-family: 'Sen', sans-serif;
+  font-weight: bolder;
+  font-size: 2rem;
+  letter-spacing: 6px;
+  text-align: center;
+  background-color: rgba(12, 10, 10, 0.76);
+  width: 15%;
+  margin-left: 42.5%;
+}
+
+/* portfolio section - cards, projects and description,
+links towrds project and work related profiles */
+.space {
+  margin-top: 20vh;
+}
+
+/* load portfolio cards on scroll - set invisible*/
+.load-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s all ease-in;
+}
+
+.box-el {
+  display: flex;
+  max-width: 900px;
+  margin-left: 501.5px;
+}
+
+.box {
+  height: 450px;
+  background: orange;
+  width: 33.3%;
+  margin: 0em 0.5em;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.box:hover .the-content-box {
+  transform: translateY(0%);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.box:hover .the-content-box hr {
+  width: 20%;
+  transition-delay: 400ms;
+}
+
+.box:hover .the-content-box p {
+  opacity: 1;
+  transition: all 400ms ease;
+  transform: translateY(0%);
+  transition-delay: 600ms;
+}
+
+.box:hover .the-content-box a {
+  opacity: 1;
+  transform: translateX(0%);
+  transition-delay: 900ms;
+}
+
+.box-inner {
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  top: 0%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.the-content-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: rgba(11, 13, 15, 0.363);
+  color: white;
+  transform: translateY(80%);
+  transition: all 600ms ease;
+}
+
+.the-content-box h1 {
+  padding: 0.2em 0em 0em 0em;
+  margin: 0;
+  font-size: 32px;
+}
+
+.the-content-box hr {
+  background: rgb(238, 238, 238);
+  height: 3px;
+  border: none;
+  margin: 1em 0em 0em 0em;
+  width: 0;
+  transition: all 400ms ease;
+}
+
+.the-content-box p {
+  letter-spacing: 1px;
+  opacity: 0;
+  font-family: arial !important;
+  transition: all 900ms ease;
+  transform: translateY(40%);
+  font-weight: lighter;
+}
+
+.the-content-box a {
+  display: inline-block;
+  background: rgb(98, 117, 138);
+  font-family: helvetica;
+  padding: 0.5em 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  position: relative;
+  transition: all 600ms ease;
+  opacity: 0;
+  transform: translateX(20%);
+}
+
+.the-content-box a:hover {
+  background: #1B324B;
+}
+
+.content-box-inner {
+  padding: 0em 1em;
+}
+
+.btnportfolio {
+  position: absolute;
+  display: inline-block;
+  background-color: rgba(15, 13, 13, 0.644);
+  text-decoration: none;
+  padding: 0.5em 2em;
+  width: 160px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 28%;
+  margin-left: 19.5%;
+  transition: all 600ms ease;
+  border-radius: 12px;
+}
+
+.btnportfolio:hover {
+  box-shadow: 2px 3px 1px black;
+  color: blueviolet;
+  border-radius: 0px;
+  text-decoration: none;
+}
+
+/* About section */
+.about {
+  margin-top: 30vh;
+  width: 100%;
+}
+
+.about-cover {
+  height: 600px;
+  background-image: url('images/abph.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0 5px 20px black;
+
+}
+
+.description1 {
+  height: 100%;
+  padding: 2rem;
+  float: left;
+  width: 925px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(15, 13, 13, 0.644);
+}
+
+.description2 {
+  height: 100%;
+  padding: 2rem;
+  float: right;
+  width: 983px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(15, 13, 13, 0.644);
+}
+
+
+/* about desc1 and 2 sections loading animations on click */
+.loadsection {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 1s all ease-in;
+}
+
+.loadtext {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.loadreadmore {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.btnabout {
+  position: absolute;
+  display: block;
+  background-color: rgba(15, 13, 13, 0.555);
+  text-decoration: none;
+  padding: 0.5em 2em;
+  width: 160px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 12%;
+  margin-left: 2%;
+  transition: all 600ms ease;
+  border-radius: 12px;
+}
+
+.btnabout:hover {
+  box-shadow: 2px 3px 1px black;
+  color: blueviolet;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+.btnreadmore {
+  position: absolute;
+  display: block;
+  background-color: rgba(15, 13, 13, 0.555);
+  text-decoration: none;
+  padding: 0.5em 2em;
+  width: 160px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 2%;
+  transition: all 600ms ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btnreadmore:hover {
+  box-shadow: 2px 3px 1px black;
+  color: blueviolet;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+/* contacts section */
+
+/* load contact page on scroll */
+.load-contactpage {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s all ease-in;
+}
+
+.loadpage {
+  opacity: 1;
+}
+
+.contact {
+  margin-top: 46vh;
+  width: 100%;
+  height: 465px;
+  background: linear-gradient(45deg,
+      rgb(0, 0, 0),
+      rgb(31, 30, 30),
+      rgb(0, 0, 0),
+      rgb(32, 32, 32));
+}
+
+.myphoto {
+  background-image: url('images/profilepic.png');
+  background-size: cover;
+  position: absolute;
+  height: 200px;
+  width: 150px;
+  display: block;
+  margin-left: 110px;
+  margin-top: -160px;
+  border-radius: 5px;
+  border-color: rgb(77, 75, 75);
+  border-style: groove;
+}
+
+.quote-box {
+  position: absolute;
+  width: 250px;
+  height: 120px;
+  margin-left: 60px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+#quote {
+  color: aliceblue;
+}
+
+.qbutton {
+  text-align: center;
+  position: relative;
+  color: rgb(197, 197, 197);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-style: none;
+  border-radius: 12px;
+  transition: all 600ms;
+}
+
+
+.qbutton:hover {
+  box-shadow: 2px 3px 1px black;
+  color: blueviolet;
+}
+
+.media ul {
+  position: absolute;
+  width: 10px;
+  list-style: none;
+  margin-left: 93%;
+  margin-top: -120px;
+}
+
+.pro {
+  color: white;
+  font-size: 35px;
+  margin-top: 20px;
+  transition: 0.8s ease;
+}
+
+.fab:hover {
+  color: rgba(121, 121, 121, 0.692);
+
+}
+
+form {
+  margin-left: 35%;
+  text-align: center;
+  width: 30%;
+  margin-top: -150px;
+}
+
+input {
+  margin-top: 20px;
+  border-radius: 12px;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+textarea {
+  margin-top: 20px;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+.form-submit {
+  position: relative;
+  margin-left: auto;
+  margin-top: 30px;
+  color: rgb(197, 197, 197);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-style: none;
+  border-radius: 12px;
+  transition: all 600ms ease;
+}
+
+.form-submit:hover {
+  border-radius: 0px;
+  box-shadow: 2px 3px 1px black;
+  color: blueviolet;
+
+}
+
+.direct-contact {
+  width: 200px;
+  float: right;
+  margin-right: 20rem;
+  color: aliceblue;
+  margin-top: -130px;
+}
+
+.gmail {
+  text-decoration: none;
+  color: aliceblue;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  margin-top: 2px;
+  transition: all 600ms;
+}
+
+.gmail:hover {
+  color: rgb(105, 112, 112);
+  text-decoration: none;
+  color: blueviolet;
+}
+
+#error-message {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  margin-top: 4.5rem;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+/* media querys */
+
+@media (max-width:1400px) {
+  .box-el {
+    margin-left: auto;
+  }
+
+  .btnportfolio {
+    margin-top: 550px;
+    margin-left: 41%;
+  }
+
+  .description1 {
+    max-width: 50%;
+  }
+
+  .description2 {
+    max-width: 50%;
+  }
+
+  .about-cover {
+    height: 1000px;
+  }
+
+  .btnabout {
+    margin-top: 20px;
+  }
+
+  .btnreadmore {
+    margin-top: -480px;
+    margin-left: 0px;
+  }
+
+  .myphoto {
+    width: 120px;
+    height: 170px;
+    margin-left: 70px;
+  }
+
+  .quote-box {
+    margin-left: 30px;
+    width: 200px;
+    margin-top: 30px;
+  }
+
+  .direct-contact {
+    position: absolute;
+    margin-left: 70%;
+    width: 180px;
+    margin-top: 100px;
+
+  }
+
+  .media {
+    position: absolute;
+    margin-left: 78%;
+    margin-top: -60px;
+  }
+
+  form {
+    width: 400px;
+    margin-left: 270px;
+  }
+
+  .form-submit {
+    margin-left: 36px;
+  }
+
+  #error-message {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  h3 {
+    width: 200px;
+    margin-left: 40%;
+  }
+
+}
